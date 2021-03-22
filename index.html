@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+        }
+
+        #mousedirection{
+            width: 20px;
+            height: 20px;
+            border: 1px solid white;
+            position: absolute;
+            border-radius: 100%;
+            transition-duration: 200ms;
+            transition-timing-function: ease-out;
+            animation: cursonAnim .5s infinite alternate;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <div class="mousedirection" id="mousedirection"></div>
+    <script>
+        const mouse = document.getElementById("mousedirection")
+
+        document.addEventListener("mousemove",event =>{
+            mouse.setAttribute("style","top :" + (event.pageY - 10) + "px;left:" + (event.pageX - 10) + "px;" + "background-color:#" + Math.floor(Math.random()*16777215).toString(16))
+        })
+    </script>
+</body>
+</html>
